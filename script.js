@@ -205,7 +205,7 @@ console.log(john);
 
 ///////////////////////////////
 //	Lectture: Objects	////////
-
+/*
 var john = {
 	name: 'John',
 	lastName: 'Smith',
@@ -235,20 +235,51 @@ jane['job'] = 'retired';
 jane['isMarried'] = true;
 
 console.log(jane);
+*/
+
+/////////////////////////////////////
+//	Lectture: Objects and methods	///
+/*
+var john = {
+	name: 'John',
+	lastName: 'Smith',
+	yearOfBirth: 1990,
+	job: 'teacher',
+	isMarried: false,
+	familly: ['Jane', 'Mark', 'Bob'],
+	calculateAge: function() {
+		return 2016 - this.yearOfBirth;
+	}
+};
 
 
+console.log(john.calculateAge());
+
+var age = john.calculateAge();
+john.age = age;
+
+console.log(john);
+
+var john = {
+	name: 'John',
+	lastName: 'Smith',
+	yearOfBirth: 1990,
+	job: 'teacher',
+	isMarried: false,
+	familly: ['Jane', 'Mark', 'Bob'],
+	calculateAge: function() {
+		this.age = 2016 - this.yearOfBirth;
+	}
+};
+
+console.log(john);
+john.calculateAge();
+console.log(john);
+*/
 
 
-
-
-
-
-
-
-
-
-
-
+/////////////////////////
+//// Lecture: Loops	//
 
 
 
