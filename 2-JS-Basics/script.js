@@ -305,12 +305,6 @@ while (i < names.length) {
 }
 */
 
-/////////////////////////////////////////
-//// Lecture: Hoisting in practice	////
-
-
-
-
 
 
 
