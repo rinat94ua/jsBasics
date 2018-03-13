@@ -305,9 +305,8 @@ while (i < names.length) {
 }
 */
 
-/////////////////////////
-//// Lecture: Loops	////
-
+/////////////////////////////////////////
+//// Lecture: Hoisting in practice	////
 
 
 
