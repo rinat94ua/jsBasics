@@ -175,3 +175,29 @@ i {
   font-weight: 300;
   color: #EB4D4D;
 }
+
+#scores-to-winn {
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
