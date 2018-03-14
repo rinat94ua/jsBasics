@@ -6,7 +6,7 @@ var john = {
 	yearOfBirth: 1990,
 	job: 'teacher'
 };
-*/
+
 
 var Person = function(name, yearOfBirth, job) {
 	this.name = name;
@@ -31,3 +31,6 @@ mark.calcAge();
 console.log(john.lastName);
 console.log(jane.lastName);
 console.log(mark.lastName);
+*/
+
+//Object.create
