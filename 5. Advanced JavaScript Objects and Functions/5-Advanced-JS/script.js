@@ -54,7 +54,7 @@ var jane = Object.create(personProto, {
 */
 
 // Primitives vs Objects
-
+/*
 //Primitives
 var a = 23;
 var b = a;
@@ -90,6 +90,52 @@ change(age, obj);
 
 console.log(age);
 console.log(obj.city);
+
+var years = [1990, 1948, 1955, 1971, 2005, 1994];
+
+function arrayCalc(arr, fn) {
+	var arrRes = [];
+	for (var i = 0; i < arr.length; i++) {
+		arrRes.push(fn(arr[i]));
+	}
+	return arrRes;
+};
+
+function caclAge(el) {
+	return 2018 - el;
+}
+
+function isFullAge(el) {
+	return el >= 18;
+}
+
+function maxHeartRate(el) {
+	if (el >= 18 && el <= 81) {
+		return Math.round(206.9 - (0.67 * el));
+	}
+
+	return -1;
+}
+
+var res = arrayCalc(years, caclAge);
+console.log(res);
+
+var fullAges = arrayCalc(res, isFullAge);
+console.log(fullAges);
+
+var rates = arrayCalc(res, maxHeartRate);
+console.log(rates);
+*/
+
+
+//
+
+
+
+
+
+
+
 
 
 
