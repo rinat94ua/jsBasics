@@ -127,8 +127,8 @@ var rates = arrayCalc(res, maxHeartRate);
 console.log(rates);
 */
 
-
-// Functions: returning functions
+/////////////////////////////////////
+// Functions: returning functions //
 /*
 function interviewQuestion(job) {
 	if (job === 'designer') {
@@ -157,7 +157,8 @@ designerQuestion('Mike');
 interviewQuestion('teacher')('Mark');
 */
 
-// Immediately invoked function expressions (IIFE)
+//////////////////////////////////////////////////////
+// Immediately invoked function expressions (IIFE) //
 /*
 function game() {
 	var score = Math.random() * 10;
@@ -181,17 +182,19 @@ game();
 
 ////////////////
 // Closures ///
+
 /*
 function retirement(retirementAge) {
-	var a = ' years left until retirement.';
-
-	return function(yearOfBirth) {
+	var a = ' year left until retirement';
+	return function (yearOfBirth) {
 		var age = 2016 - yearOfBirth;
 		console.log((retirementAge - age) + a);
 	}
 }
 
 var retirementUS = retirement(66);
+// retirement(66)(1990);
+
 var retirementGermany = retirement(65);
 var retirementIceland = retirement(67);
 
@@ -199,9 +202,7 @@ retirementGermany(1990);
 retirementIceland(1990);
 retirementUS(1990);
 
-//retirement(66)(1990);
-
-
+//interview closure function
 function interviewQuestion(job) {
 	return function(name) {
 		if (job === 'designer') {
@@ -211,39 +212,74 @@ function interviewQuestion(job) {
 		} else {
 			console.log('Hello ' + name + ', what do you do?');
 		}
-	}
+	};
 }
 
-interviewQuestion('teacher')('John');
+interviewQuestion('designer')('John');
 */
 
 //////////////////////////////
 //// Bind, Call, Apply //////
+/*
+var john = {
+	name: 'John',
+	age: 26,
+	job: 'teacher',
+	presentation: function(style, timeOfDay) {
+		if (style === 'formal') {
+			console.log('Good ' + timeOfDay + ', Ladies and gentlemen! I\'m ' 
+																			+ this.name + ', I\'m a ' + this.job 
+																			+ ' and I\'m ' + this.age + ' yeard old.');
+		} else if (style === 'friendly') {
+			console.log('Hey! What\'s up? I\'m ' + this.name + ', I\'m a ' + this.job 
+																					 + ' and I\'m ' + this.age + ' yeard old. Have a nice '
+																					 + timeOfDay + '.');
+		}
+	}
+}
+
+var emily = {
+	name: 'Emily',
+	age: 35,
+	job: 'designer'
+}
+
+john.presentation('formal', 'morning');
+
+john.presentation.call(emily, 'friendly', 'afternoon');
+//john.presentation.apply(amily, ['friendly', 'afternoon']);
+
+var johnFriendly = john.presentation.bind(john, 'friendly');
+johnFriendly('morning');
+johnFriendly('night');
+
+var emilyFormal = john.presentation.bind(emily, 'formal');
+emilyFormal('evening');
+emilyFormal('morning');
 
 
 
+var years = [1990, 1948, 1955, 1971, 2005, 1994];
 
+function arrayCalc(arr, fn) {
+	var arrRes = [];
+	for (var i = 0; i < arr.length; i++) {
+		arrRes.push(fn(arr[i]));
+	}
+	return arrRes;
+};
 
+function caclAge(el) {
+	return 2018 - el;
+}
 
+function isFullAge(limit, el) {
+	return el >= limit;
+}
 
+var ages = arrayCalc(years, caclAge);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+var fullJapan = arrayCalc(ages, isFullAge.bind(this, 20));
+console.log(ages);
+console.log(fullJapan);
+*/
